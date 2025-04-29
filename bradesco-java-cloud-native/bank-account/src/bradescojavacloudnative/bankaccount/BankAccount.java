@@ -3,7 +3,7 @@ package bradescojavacloudnative.bankaccount;
 public class BankAccount {
 
     private int accountNumber;
-    private String agencyNumber;
+    private int agencyNumber;
     private String clientName;
     private double balance;
 
@@ -11,23 +11,23 @@ public class BankAccount {
     }
 
     public int getAccountNumber() {
-        return this.accountNumber;
+        return accountNumber;
     }
 
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public String getAgencyNumber() {
-        return this.agencyNumber;
+    public int getAgencyNumber() {
+        return agencyNumber;
     }
 
-    public void setAgencyNumber(String agencyNumber) {
+    public void setAgencyNumber(int agencyNumber) {
         this.agencyNumber = agencyNumber;
     }
 
     public String getClientName() {
-        return this.clientName;
+        return clientName;
     }
 
     public void setClientName(String clientName) {
@@ -35,7 +35,7 @@ public class BankAccount {
     }
 
     public double getBalance() {
-        return this.balance;
+        return balance;
     }
 
     public void setBalance(double balance) {
