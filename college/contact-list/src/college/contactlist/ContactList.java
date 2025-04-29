@@ -12,8 +12,8 @@ public class ContactList {
 
     public void createContact() {
         System.out.println("""
-                What kind of contact would you like to add? \s
-                1. Person. \s
+                What kind of contact would you like to add?
+                1. Person.
                 2. Company.
                 """);
 
@@ -161,11 +161,11 @@ public class ContactList {
 
         do {
             System.out.println("""
-                        Choose one of the following options: \s
-                        1. Add a contact. \s
-                        2. List all contacts. \s
-                        3. Find contact by document number. \s
-                        4. Delete a contact. \s
+                        Choose one of the following options:
+                        1. Add a contact.
+                        2. List all contacts.
+                        3. Find contact by document number.
+                        4. Delete a contact.
                         0. End the program.
                         """);
 
