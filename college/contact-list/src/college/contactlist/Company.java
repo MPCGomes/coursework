@@ -13,6 +13,10 @@ public class Company extends Contact {
         this.businessName = businessName;
     }
 
+    public Company() {
+
+    }
+
     public String getCnpj() {
         return cnpj;
     }

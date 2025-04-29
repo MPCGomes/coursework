@@ -13,6 +13,10 @@ public class Person extends Contact {
         this.maritalStatus = maritalStatus;
     }
 
+    public Person() {
+
+    }
+
     public String getCpf() {
         return cpf;
     }

@@ -1,6 +1,6 @@
 package college.contactlist;
 
-public abstract class Contact {
+public class Contact {
 
     private String name;
     private String address;
