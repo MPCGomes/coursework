@@ -1,3 +1,5 @@
+package bradescojavacloudnative.bankaccount;
+
 public class BankAccount {
 
     private int accountNumber;
