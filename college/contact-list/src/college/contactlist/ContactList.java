@@ -172,7 +172,6 @@ public class ContactList {
             option = InputScanner.scanner.nextInt();
             InputScanner.scanner.nextLine(); // consume leftover line break
 
-
             switch (option) {
                 case 1:
                     createContact();
@@ -181,14 +180,19 @@ public class ContactList {
                     sortContactsByInstanceOfAndDocumentNumber();
                     findAllContacts();
                     break;
-                case 3:
+                case 3, 4: {
                     System.out.println("Type the contact's CPF or CNPJ.");
-                    findContactByDocumentNumber(InputScanner.scanner.nextLine());
+                    String documentNumber = InputScanner.scanner.nextLine();
+
+                    if (option == 3) {
+                        findContactByDocumentNumber(documentNumber);
+                    } else {
+                        delete(documentNumber);
+                    }
                     break;
-                case 4:
-                    System.out.println("Type the contact's CPF or CNPJ.");
-                    delete(InputScanner.scanner.nextLine());
-                    break;
+                }
+                case 0:
+                    System.exit(0);
                 default:
                     System.out.println("Invalid option. Please, try again.");
                     break;
