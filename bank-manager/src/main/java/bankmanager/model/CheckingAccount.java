@@ -1,6 +1,6 @@
-package bankmanager.model;
+package main.java.bankmanager.model;
 
-import bankmanager.exception.InsufficientBalanceException;
+import main.java.bankmanager.exception.InsufficientBalanceException;
 
 public class CheckingAccount extends Account {
     public CheckingAccount(int accountNumber, String accountHolder, double balance) {

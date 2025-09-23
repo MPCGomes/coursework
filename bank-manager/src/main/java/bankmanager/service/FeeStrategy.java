@@ -1,4 +1,4 @@
-package bankmanager.service;
+package main.java.bankmanager.service;
 
 public enum FeeStrategy {
     FIXED {

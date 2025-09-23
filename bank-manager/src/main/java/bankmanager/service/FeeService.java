@@ -1,6 +1,6 @@
-package bankmanager.service;
+package main.java.bankmanager.service;
 
-import bankmanager.model.CheckingAccount;
+import main.java.bankmanager.model.CheckingAccount;
 
 public final class FeeService {
 

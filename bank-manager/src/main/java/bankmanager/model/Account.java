@@ -1,6 +1,6 @@
-package bankmanager.model;
+package main.java.bankmanager.model;
 
-import bankmanager.exception.InsufficientBalanceException;
+import main.java.bankmanager.exception.InsufficientBalanceException;
 
 public abstract class Account {
     private int accountNumber;

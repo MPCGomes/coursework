@@ -1,6 +1,6 @@
-package bankmanager.ui;
+package main.java.bankmanager.ui;
 
-import bankmanager.model.CheckingAccount;
+import main.java.bankmanager.model.CheckingAccount;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;

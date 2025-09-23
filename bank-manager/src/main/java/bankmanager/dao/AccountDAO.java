@@ -1,7 +1,7 @@
-package bankmanager.dao;
+package main.java.bankmanager.dao;
 
-import bankmanager.config.DatabaseConfig;
-import bankmanager.model.CheckingAccount;
+import main.java.bankmanager.config.DatabaseConfig;
+import main.java.bankmanager.model.CheckingAccount;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -75,7 +75,6 @@ public class AccountDAO {
         }
     }
 
-    // Atomic transfer transaction
     public void transfer(int fromNumber, int toNumber, double amount) throws SQLException {
         if (amount <= 0) throw new SQLException("Amount must be positive.");
 
@@ -134,6 +133,27 @@ public class AccountDAO {
             } finally {
                 connection.setAutoCommit(true);
             }
+        }
+    }
+
+    public void upsertAll(List<CheckingAccount> checkingAccountList) throws SQLException {
+        String sql = """
+                    INSERT INTO accounts (number, holder, balance)
+                    VALUES (?, ?, ?)
+                    ON DUPLICATE KEY UPDATE holder = VALUES(holder), balance = VALUES(balance)
+                """;
+
+        try (Connection connection = DatabaseConfig.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            for (CheckingAccount checkingAccount : checkingAccountList) {
+                preparedStatement.setInt(1, checkingAccount.getAccountNumber());
+                preparedStatement.setString(2, checkingAccount.getAccountHolder());
+                preparedStatement.setDouble(3, checkingAccount.getBalance());
+                preparedStatement.addBatch();
+            }
+
+            preparedStatement.executeBatch();
         }
     }
 }

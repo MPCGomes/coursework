@@ -1,4 +1,4 @@
-package bankmanager.exception;
+package main.java.bankmanager.exception;
 
 public class InsufficientBalanceException extends Exception {
     public InsufficientBalanceException(String message) {
